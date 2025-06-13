@@ -7,14 +7,13 @@
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <meta name="keywords" content="xampp, Htdocs, html, mysql, php, projet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href=style.css rel=stylesheet>
+    <link rel=stylesheet href=index.css>
     <!-- Titre --------------------->
     <title>xamppHtdocsProjet</title>
 </head>
 
 <!-- body section --------->
 <body id="content" class="body">
-    <header>
 <!-- Navbar section ------------->
         <nav class="navbar">
             <div class="hamburger-menu" id="hamburgerMenu">
@@ -35,7 +34,6 @@
             <div class="tagline">T2OSOUND6TM - 100% LIVE</div>
             <div class="motto">LA TEKNO EST UN ART DE VIVRE LIBRE</div>
         </div>
-    </header>
 
 <!-- manifesto section --------->
     <section id="manifesto">
@@ -164,13 +162,20 @@
 
 <!-- script section ------------>
     <script src="script.js">
-        document.addEventListener("DOMContentLoaded", function () {
-            const hamburgerMenu = document.getElementById("hamburgerMenu");
-            const navLinks = document.getElementById("navLinks");
+                // Hamburger menu toggle
+                const hamburgerMenu = document.getElementById('hamburgerMenu');
+                const navLinks = document.getElementById('navLinks');
 
-            hamburgerMenu.addEventListener("click", function () {
-                navLinks.classList.toggle("active");
+                hamburgerMenu.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburgerMenu.classList.toggle('active');
             });
+
+    // Back to top functionality
+    const backToTop = document.querySelector('.back-to-top');
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
